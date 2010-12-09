@@ -7,7 +7,7 @@ class moduleSystemGit {
 
     public static function getModuleId (){
         $uri = uri::getInstance();
-        return $uri->fragment(3);
+        return (int)$uri->fragment(3);
     }
 
 
@@ -64,7 +64,6 @@ class moduleSystemGit {
 
     public static function sanitize (){
         $_POST = cos_htmlentities($_POST);
-
 
     }
 

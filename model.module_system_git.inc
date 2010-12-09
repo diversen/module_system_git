@@ -249,18 +249,22 @@ class moduleSystemGit {
     public static function getNumRows ($user = false){
         $db = new db();
 
+        
         $type = self::getModuleFilter();
-        if ($type == 0 && !$user){
-            return $db->getNumRows('module_system_git');
+        if (!$user){
+            if ($type == 0){
+                return $db->getNumRows('module_system_git');
+            } else {
+                return $db->getNumRows('module_system_git', array('type' => $type));
+            }
         } else {
-            return $db->getNumRows('module_system_git', array('type' => $type));
-        }
-
-        $account_id = session::getUserId();
-        if ($type == 0 && $user){
-            return $db->getNumRows('module_system_git', array ('accont_id' => $account_id));
-        } else {
-            return $db->getNumRows('module_system_git', array('type' => $type, 'account_id' => $account_id));
+        
+            $account_id = session::getUserId();
+            if ($type == 0 ){
+                return $db->getNumRows('module_system_git', array ('account_id' => $account_id));
+            } else {
+                return $db->getNumRows('module_system_git', array('type' => $type, 'account_id' => $account_id));
+            }
         }
     }
 

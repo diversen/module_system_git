@@ -1,6 +1,7 @@
 <?php
 
 include_once "mySqlForm.php";
+include_once "pearPager.php";
 
 class moduleSystemGit {
     public static $errors = null;
@@ -249,10 +250,17 @@ class moduleSystemGit {
         $db = new db();
 
         $type = self::getModuleFilter();
-        if ($type == 0){
+        if ($type == 0 && !$user){
             return $db->getNumRows('module_system_git');
         } else {
             return $db->getNumRows('module_system_git', array('type' => $type));
+        }
+
+        $account_id = session::getUserId();
+        if ($type == 0 && $user){
+            return $db->getNumRows('module_system_git', array ('accont_id' => $account_id));
+        } else {
+            return $db->getNumRows('module_system_git', array('type' => $type, 'account_id' => $account_id));
         }
     }
 

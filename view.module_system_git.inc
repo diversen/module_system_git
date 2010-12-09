@@ -35,7 +35,10 @@ class viewModuleSystemGit {
     public static function viewModules ($rows){
         foreach ($rows as $key => $val){
             print "<hr />\n";
-            print "<h3>" . create_link($val['url'], $val['title']) . "</h3>\n";
+            print "<h3>";
+            echo $val['title'] . " ";
+
+            echo "</h3>\n";
             
             if ($val['account_id'] == session::getUserId()){
                 echo create_link("/module_system_git/user/edit/$val[id]", lang::translate('module_system_git_edit')) . " | ";
@@ -44,6 +47,7 @@ class viewModuleSystemGit {
             }
 
             print substr2 ($val['abstract'], 150);
+                        echo create_link("/module_system_git/more/$val[id]", lang::translate('module_system_git_read_more'));
             print "<br />\n";
             print lang::translate('module_system_git_install') . " :: ";
             print "<br />\n";
@@ -58,4 +62,7 @@ class viewModuleSystemGit {
         }        
     }
 
+    public static function viewMore (){
+
+    }
 }

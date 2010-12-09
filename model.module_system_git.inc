@@ -63,8 +63,8 @@ class moduleSystemGit {
     // }}}
 
     public static function sanitize (){
-        $_POST = cos_htmlentities($_POST);
-
+        $_POST = get_filtered_content('safe', $_POST);
+        
     }
 
     public static function validate ($method = 'insert') {
@@ -245,6 +245,17 @@ class moduleSystemGit {
         return $rows;
     }
     // }}}
+    public static function getNumRows ($user = false){
+        $db = new db();
+
+        $type = self::getModuleFilter();
+        if ($type == 0){
+            return $db->getNumRows('module_system_git');
+        } else {
+            return $db->getNumRows('module_system_git', array('type' => $type));
+        }
+    }
+
     // {{{ checkModuleOwner
     /**
      * method for checking if a module belongs to logged in user or not

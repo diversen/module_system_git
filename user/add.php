@@ -12,7 +12,6 @@ if (!empty($_POST['submit'])){
     if (moduleSystemGit::$errors == null){
         $res = moduleSystemGit::insert();
         if ($res){
-                        //$insertId = self::$dbh->lastInsertId();
             session::setActionMessage(
                 lang::translate('module_system_git_module_created')
             );

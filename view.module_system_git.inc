@@ -53,16 +53,46 @@ class viewModuleSystemGit {
             print "<br />\n";
 
             if ($val['type'] == '1'){
-                print "./coscli.sh git --install $val[clone_url]";
+                print "./coscli.sh git --mod-in $val[clone_url]";
             } else if ($val['type'] == '2') {
-                print "./coscli.sh git --install-template $val[clone_url]";
+                print "./coscli.sh git --temp-in $val[clone_url]";
             } else if ($val['type'] == '3') {
-                print "./coscli.sh git --install-profile $val[clone_url]";
+                print "./coscli.sh git --pro-in $val[clone_url]";
             }
         }        
     }
 
     public static function viewMore (){
+        $id = moduleSystemGit::getModuleId();
+        $db = new db();
+        $row = $db->selectOne('module_system_git', null, array('id' => $id));
+        print_r($row);
+
+            print "<h3>";
+            echo $val['title'] . " ";
+
+            echo "</h3>\n";
+            
+            if ($val['account_id'] == session::getUserId()){
+                echo create_link("/module_system_git/user/edit/$val[id]", lang::translate('module_system_git_edit')) . " | ";
+                echo create_link("/module_system_git/user/delete/$val[id]", lang::translate('module_system_git_delete'));
+                echo "<br />\n";
+            }
+
+            print substr2 ($val['abstract'], 150);
+                        echo create_link("/module_system_git/more/$val[id]", lang::translate('module_system_git_read_more'));
+            print "<br />\n";
+            print lang::translate('module_system_git_install') . " :: ";
+            print "<br />\n";
+
+            if ($val['type'] == '1'){
+                print "./coscli.sh git --mod-in $val[clone_url]";
+            } else if ($val['type'] == '2') {
+                print "./coscli.sh git --temp-in $val[clone_url]";
+            } else if ($val['type'] == '3') {
+                print "./coscli.sh git --pro-in $val[clone_url]";
+            }
+
 
     }
 }

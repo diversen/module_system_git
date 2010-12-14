@@ -8,6 +8,11 @@ class moduleSystemGit {
 
     public static function getModuleId (){
         $uri = uri::getInstance();
+        return (int)$uri->fragment(2);
+    }
+
+    public static function getUserModuleId (){
+        $uri = uri::getInstance();
         return (int)$uri->fragment(3);
     }
 

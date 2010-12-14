@@ -65,34 +65,42 @@ class viewModuleSystemGit {
     public static function viewMore (){
         $id = moduleSystemGit::getModuleId();
         $db = new db();
-        $row = $db->selectOne('module_system_git', null, array('id' => $id));
-        print_r($row);
+        $val = $db->selectOne('module_system_git', 'id', $id);
+        
+        print "<h3>$val[title]</h3>";
 
-            print "<h3>";
-            echo $val['title'] . " ";
+        print "<p>\n";
+        print ($val['abstract']);
+        print "</p>\n";
 
-            echo "</h3>\n";
-            
-            if ($val['account_id'] == session::getUserId()){
-                echo create_link("/module_system_git/user/edit/$val[id]", lang::translate('module_system_git_edit')) . " | ";
-                echo create_link("/module_system_git/user/delete/$val[id]", lang::translate('module_system_git_delete'));
-                echo "<br />\n";
-            }
+        print "<p>\n";
+        print "<strong>" . lang::translate('module_system_git_install') . " :: " . "</strong>";
 
-            print substr2 ($val['abstract'], 150);
-                        echo create_link("/module_system_git/more/$val[id]", lang::translate('module_system_git_read_more'));
-            print "<br />\n";
-            print lang::translate('module_system_git_install') . " :: ";
-            print "<br />\n";
 
-            if ($val['type'] == '1'){
-                print "./coscli.sh git --mod-in $val[clone_url]";
-            } else if ($val['type'] == '2') {
-                print "./coscli.sh git --temp-in $val[clone_url]";
-            } else if ($val['type'] == '3') {
-                print "./coscli.sh git --pro-in $val[clone_url]";
-            }
+        print "<pre>\n";
+        if ($val['type'] == '1'){
+            print "./coscli.sh git --mod-in $val[clone_url]";
+        } else if ($val['type'] == '2') {
+            print "./coscli.sh git --temp-in $val[clone_url]";
+        } else if ($val['type'] == '3') {
+            print "./coscli.sh git --pro-in $val[clone_url]";
+        }
+        print "</pre>\n";
+        print "</p>\n";
 
+        print "<p>\n";
+        print "<strong>" . lang::translate('module_system_git_website') . " :: " . "</strong>";
+        print "<p>\n";
+        echo create_link($val['url'], $val['url']);
+        print "</p>\n";
+
+        print "<p>";
+        if ($val['account_id'] == session::getUserId()){
+            echo create_link("/module_system_git/user/edit/$val[id]", lang::translate('module_system_git_edit')) . " | ";
+            echo create_link("/module_system_git/user/delete/$val[id]", lang::translate('module_system_git_delete'));
+        }
+        print "</p>\n";
+        print "<hr />\n";
 
     }
 }

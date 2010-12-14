@@ -20,8 +20,8 @@ if (!empty($_POST['submit'])){
         }
     } else {
         view_form_errors(moduleSystemGit::$errors);
-        moduleSystemGit::Form('update', moduleSystemGit::getModuleId());
+        moduleSystemGit::Form('update', moduleSystemGit::getUserModuleId());
     }
 } else {
-    moduleSystemGit::Form('update', moduleSystemGit::getModuleId());
+    moduleSystemGit::Form('update', moduleSystemGit::getUserModuleId());
 }

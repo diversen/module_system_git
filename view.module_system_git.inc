@@ -34,49 +34,33 @@ class viewModuleSystemGit {
 
     public static function viewModules ($rows){
         foreach ($rows as $key => $val){
+            
+            // title
             print "<hr />\n";
             print "<h3>";
             echo $val['title'] . " ";
-
             echo "</h3>\n";
-            
-            if ($val['account_id'] == session::getUserId()){
-                echo create_link("/module_system_git/user/edit/$val[id]", lang::translate('module_system_git_edit')) . " | ";
-                echo create_link("/module_system_git/user/delete/$val[id]", lang::translate('module_system_git_delete'));
-                echo "<br />\n";
-            }
 
+            // abstract - more link
+            echo "<p>\n";
             print substr2 ($val['abstract'], 150);
-                        echo create_link("/module_system_git/more/$val[id]", lang::translate('module_system_git_read_more'));
-            print "<br />\n";
-            print lang::translate('module_system_git_install') . " :: ";
-            print "<br />\n";
 
-            if ($val['type'] == '1'){
-                print "./coscli.sh git --mod-in $val[clone_url]";
-            } else if ($val['type'] == '2') {
-                print "./coscli.sh git --temp-in $val[clone_url]";
-            } else if ($val['type'] == '3') {
-                print "./coscli.sh git --pro-in $val[clone_url]";
+            echo create_link("/module_system_git/more/$val[id]", lang::translate('module_system_git_read_more'));
+            echo "</p>\n";
+            
+            // install info
+            self::installInfo($val);
+
+            // admin options
+            if ($val['account_id'] == session::getUserId()){
+                self::adminLinks($val['id']);
             }
         }        
     }
 
-    public static function viewMore (){
-        $id = moduleSystemGit::getModuleId();
-        $db = new db();
-        $val = $db->selectOne('module_system_git', 'id', $id);
-        
-        print "<h3>$val[title]</h3>";
-
+    public static function installInfo(&$val){
         print "<p>\n";
-        print ($val['abstract']);
-        print "</p>\n";
-
-        print "<p>\n";
-        print "<strong>" . lang::translate('module_system_git_install') . " :: " . "</strong>";
-
-
+        print lang::translate('module_system_git_install') . " :: ";
         print "<pre>\n";
         if ($val['type'] == '1'){
             print "./coscli.sh git --mod-in $val[clone_url]";
@@ -87,20 +71,43 @@ class viewModuleSystemGit {
         }
         print "</pre>\n";
         print "</p>\n";
+    }
 
+    public static function adminLinks($id){
+        echo "<p>\n";
+        echo create_link("/module_system_git/user/edit/$id", lang::translate('module_system_git_edit')) . " | ";
+        echo create_link("/module_system_git/user/delete/$id", lang::translate('module_system_git_delete'));
+        echo "<p/>\n";
+    }
+
+    public static function viewMore (){
+        $id = moduleSystemGit::getModuleId();
+        $db = new db();
+        $val = $db->selectOne('module_system_git', 'id', $id);
+        
+        // title
+        print "<h3>";
+        echo $val['title'] . " ";
+        echo "</h3>\n";
+
+        // abstract - more link
+        echo "<p>\n";
+        print ($val['abstract']);
+        print "</p>\n";
         print "<p>\n";
-        print "<strong>" . lang::translate('module_system_git_website') . " :: " . "</strong>";
-        print "<p>\n";
+        print lang::translate('module_system_git_visit_website') . " :: ";
+
+
         echo create_link($val['url'], $val['url']);
-        print "</p>\n";
+        echo "</p>\n";
 
-        print "<p>";
+        // install info
+        self::installInfo($val);
+
+        // admin options
         if ($val['account_id'] == session::getUserId()){
-            echo create_link("/module_system_git/user/edit/$val[id]", lang::translate('module_system_git_edit')) . " | ";
-            echo create_link("/module_system_git/user/delete/$val[id]", lang::translate('module_system_git_delete'));
+            self::adminLinks($val['id']);
         }
-        print "</p>\n";
-        print "<hr />\n";
 
     }
 }

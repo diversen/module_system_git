@@ -69,8 +69,8 @@ class moduleSystemGit {
     // }}}
 
     public static function sanitize (){
-        $_POST = get_filtered_content('safe', $_POST);
-        
+        $_POST = get_filtered_content('safe', $_POST); 
+
     }
 
     public static function validate ($method = 'insert') {

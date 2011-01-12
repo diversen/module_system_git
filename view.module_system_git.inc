@@ -81,9 +81,7 @@ class viewModuleSystemGit {
     }
 
     public static function viewMore (){
-        $id = moduleSystemGit::getModuleId();
-        $db = new db();
-        $val = $db->selectOne('module_system_git', 'id', $id);
+        $val = moduleSystemGit::getModule();
         
         // title
         print "<h3>";
@@ -108,6 +106,5 @@ class viewModuleSystemGit {
         if ($val['account_id'] == session::getUserId()){
             self::adminLinks($val['id']);
         }
-
     }
 }

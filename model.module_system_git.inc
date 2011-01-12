@@ -69,7 +69,7 @@ class moduleSystemGit {
     // }}}
 
     public static function sanitize (){
-        $_POST = get_filtered_content('safe', $_POST); 
+        $_POST = cos_htmlspecialchars($_POST);
 
     }
 
@@ -244,7 +244,7 @@ class moduleSystemGit {
         if ($selected){
             $where = array ('type' => $selected, 'account_id' => session::getUserId());
         } else {
-            $where = null;
+            $where = array ( 'account_id' => session::getUserId());
         }
         $db = new db();
         $rows = $db->selectAll('module_system_git', null, $where, $from, $limit, 'title', true);
@@ -294,6 +294,14 @@ class moduleSystemGit {
         }
     }
     // }}}
+
+    public static function getModule (){
+        $id = moduleSystemGit::getModuleId();
+        $db = new db();
+        $val = $db->selectOne('module_system_git', 'id', $id);
+        return $val;
+
+    }
 }
 
 

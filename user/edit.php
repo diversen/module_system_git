@@ -2,8 +2,11 @@
 
 include_model('module_system_git');
 
-if (!session::isUser()){
-    return;
+if (!moduleSystemGit::checkModuleOwner()){
+    if ( !session::isAdmin()){
+        moduleLoader::$status[403] = 1;
+        return;
+    }
 }
 
 if (!empty($_POST['submit'])){

@@ -172,7 +172,7 @@ class moduleSystemGit {
      */
     public function deleteModule () {
         $db = new db();
-        $res = $db->delete('module_system_git', 'id', self::getModuleId());
+        $res = $db->delete('module_system_git', 'id', self::getUserModuleId());
         return $res;
     }
     // }}}
@@ -279,11 +279,11 @@ class moduleSystemGit {
      *
      * @return boolean true on success and false on failure
      */
-    public function checkModuleOwner (){
+    public static function checkModuleOwner (){
         // checks that user owns the module in question.
         $search = array(
             'account_id' => session::getUserId(),
-            'id' => self::getModuleId(),
+            'id' => self::getUserModuleId(),
         );
         $db = new db();
         $rows = $db->select('module_system_git', null, $search);

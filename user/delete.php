@@ -8,15 +8,11 @@
 include_module ("module_system_git");
 template::setTitle(lang::translate('module_system_git_delete_module'));
 
-if (!session::isUser()){
-    moduleLoader::$status['403'] = 1;
-    return;
-}
-
-// checks that user owns module
 if (!moduleSystemGit::checkModuleOwner()){
-    moduleLoader::$status['403'] = 1;
-    return;
+    if ( !session::isAdmin()){
+        moduleLoader::$status[403] = 1;
+        return;
+    }
 }
 
 if (isset($_POST['submit'])){

@@ -158,10 +158,9 @@ class moduleSystemGit {
      */
     public function updateModule () {
         $values = db::prepareToPost();
-        $values['account_id'] = session::getUserId();
-        
+        $values['account_id'] = session::getUserId();        
         $db = new db();
-        $res = $db->update('module_system_git', $values, self::getModuleId());
+        $res = $db->update('module_system_git', $values, self::getUserModuleId());
         return $res;
     }
     // }}}

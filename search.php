@@ -54,9 +54,7 @@
 	}
 </style>
 
-</head>
 
-<body>
 
 
 	<div>
@@ -77,6 +75,4 @@
 		</form>
 	</div>
 
-</body>
-</html>
 

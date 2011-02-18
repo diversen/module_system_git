@@ -40,3 +40,4 @@ $_COS_LANG_MODULE['module_system_git_module_updated'] = 'Module Updated';
 
 $_COS_LANG_MODULE['module_system_git_read_more'] = '(More info)';
 $_COS_LANG_MODULE['module_system_git_visit_website'] = 'Website';
+

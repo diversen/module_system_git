@@ -74,13 +74,12 @@ class moduleSystemGit {
     }
 
     public static function validate ($method = 'insert') {
-        if (!empty($_POST['submit'])){
+        if (!empty($_POST)){
             $db = new db();
             if ($method == 'insert'){
                 if (empty($_POST['title'])){
                     self::$errors[] = lang::translate('module_system_git_error_title');
                 }
-
                 
                 $row = $db->selectOne('module_system_git', 'title', $_POST['title']);
 
@@ -93,12 +92,14 @@ class moduleSystemGit {
                 self::$errors[] = lang::translate('module_system_git_error_abstract');
             }
 
-
-
             if (empty($_POST['url'])){
-                self::$errors[] = lang::translate('module_system_git_error_url');
+                //self::$errors[] = lang::translate('module_system_git_error_url');
+                if (!cosValidate::url($_POST['url'])){
+                    self::$errors[] = lang::translate('module_system_git_error_url');
+                }
             }
 
+            /**
             $row = $db->selectOne('module_system_git', 'url', $_POST['url']);
             if ($row){
                 if ($method == 'insert'){
@@ -109,12 +110,13 @@ class moduleSystemGit {
                         self::$errors[] = lang::translate('module_system_git_error_url_exists');
                     }
                 }
-            }
+            }*/
 
             if (empty($_POST['clone_url'])){
                 self::$errors[] = lang::translate('module_system_git_error_clone_url');
             }
 
+            /*
             $row = $db->selectOne('module_system_git', 'clone_url', $_POST['clone_url']);
             if ($row){
                  if ($method == 'insert'){
@@ -124,9 +126,8 @@ class moduleSystemGit {
                     if ($row['id'] != self::getModuleId()){
                         self::$errors[] = lang::translate('module_system_git_error_clone_url_exists');
                     }
-                }
-                
-            }
+                }       
+            }*/
 
             if (!empty($_POST['clone_url'])){
                 $tag = latest_tag($_POST['clone_url']);

@@ -10,7 +10,7 @@ $_COS_LANG_MODULE['module_system_git_install'] = 'Install';
 // Translation of file /home/dennis/www/coscms/modules/module_system_git/model.module_system_git.inc
 
 $_COS_LANG_MODULE['module_system_git_form_title'] = 'Title. Must be unique';
-$_COS_LANG_MODULE['module_system_git_form_abstract'] = 'Write a abstract';
+$_COS_LANG_MODULE['module_system_git_form_abstract'] = 'Write an abstract (you can use <a href="http://daringfireball.net/projects/markdown/syntax">markdown syntax</a>)';
 $_COS_LANG_MODULE['module_system_git_form_url'] = 'Enter a url with more info about module';
 $_COS_LANG_MODULE['module_system_git_form_clone_url'] = 'Enter a public clone url';
 $_COS_LANG_MODULE['module_system_git_form_type'] = 'Type of module: Module, Template or Profile';
@@ -24,7 +24,7 @@ $_COS_LANG_MODULE['module_system_git_error_url'] = 'Not a valid url';
 $_COS_LANG_MODULE['module_system_git_error_url_exists'] = 'Url already exists';
 $_COS_LANG_MODULE['module_system_git_error_clone_url'] = 'Not a valid clone url';
 $_COS_LANG_MODULE['module_system_git_error_clone_url_exists'] = 'Clone url already exists';
-$_COS_LANG_MODULE['module_system_git_error_clone_url_no_tag'] = 'module_system_git_error_clone_url_no_tag';
+$_COS_LANG_MODULE['module_system_git_error_clone_url_no_tag'] = 'Your module need at least one tag';
 $_COS_LANG_MODULE['module_system_git_error_clone_url_tag_not_float'] = 'Your module needs to use floats as version tags';
 // Translation of file /home/dennis/www/coscms/modules/module_system_git/user/add.php
 
@@ -32,7 +32,7 @@ $_COS_LANG_MODULE['module_system_git_module_created'] = 'Module Created';
 // Translation of file /home/dennis/www/coscms/modules/module_system_git/user/delete.php
 
 $_COS_LANG_MODULE['module_system_git_delete_module'] = 'Delete_Module';
-$_COS_LANG_MODULE['module_system_git_module_deleted'] = 'Modukle Deleted';
+$_COS_LANG_MODULE['module_system_git_module_deleted'] = 'Module Deleted';
 // Translation of file /home/dennis/www/coscms/modules/module_system_git/user/edit.php
 
 $_COS_LANG_MODULE['module_system_git_module_updated'] = 'Module Updated';

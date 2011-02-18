@@ -10,6 +10,6 @@ $_COS_LANG_MODULE['module_system_git_menu_list'] = 'List Modules';
 $_COS_LANG_MODULE['module_system_git_menu_user_list'] = 'List Your Modules';
 
 $_COS_LANG_MODULE['module_system_git_menu_user'] = 'Your Modules';
-$_COS_LANG_MODULE['module_system_git_menu_add'] = 'Add';
+$_COS_LANG_MODULE['module_system_git_menu_add'] = 'Add New Module';
 
 

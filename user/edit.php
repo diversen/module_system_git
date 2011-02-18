@@ -9,7 +9,7 @@ if (!moduleSystemGit::checkModuleOwner()){
     }
 }
 
-if (!empty($_POST['submit'])){
+if (!empty($_POST)){
     moduleSystemGit::sanitize();
     moduleSystemGit::validate('update');
     if (moduleSystemGit::$errors == null){

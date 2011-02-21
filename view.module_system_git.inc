@@ -111,7 +111,7 @@ class viewModuleSystemGit {
 
     public static function suggestBox (){ ?>
 
-Quick lookup: 
+<br />Quick lookup (min 3 chars):
 <script type="text/javascript">
 $(function() {
 

@@ -11,9 +11,18 @@ $db = new db();
 
 if(isset($_GET['term'])) {
     $queryString = cos_htmlentities($_GET['term']);
+
+
     if(strlen($queryString) > 2) {
-        $query = "SELECT id, title as value FROM module_system_git WHERE title LIKE ". db::$dbh->quote("%" . $queryString . "%");
-        $rows = $db->selectQuery($query);        
+        $filter = moduleSystemGit::getModuleFilter();
+
+        if ($filter == 0){
+            $query = "SELECT id, title as value FROM module_system_git WHERE title LIKE ". db::$dbh->quote("%" . $queryString . "%");
+        } else {
+            $query = "SELECT id, title as value FROM module_system_git WHERE type = " . db::$dbh->quote($filter). " AND title LIKE ". db::$dbh->quote("%" . $queryString . "%");
+        }
+        
+        $rows = $db->selectQuery($query);
         $json = json_encode($rows);
         echo $json;
     }

@@ -18,7 +18,7 @@ class viewModuleSystemGit {
 
         $str = '';
         $str.= '<div id="module_system_search">';
-        $str.= '<form method="get" action="">';
+        $str.= '<form method="get" action="/module_system_git/index">';
         $extras = array();
         $extras[0] = array('id' => '0', 'title' => lang::translate('Show All'));
         $str.= view_drop_down_db(

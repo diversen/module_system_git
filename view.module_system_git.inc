@@ -29,16 +29,17 @@ class viewModuleSystemGit {
         $str.= '</form>';
         $str.= '</div>';
         //return $str;
-        print $str;
+        echo $str;
+        self::suggestBox();
     }
 
     public static function viewModules ($rows){
         foreach ($rows as $key => $val){
             
             // title
-            print "<hr />\n";
-            print "<h3>";
-            echo $val['title'] . " ";
+            echo "<hr />\n";
+            echo "<h3>";
+            echo create_link("/module_system_git/more/$val[id]", $val['title']);
             echo "</h3>\n";
 
             // abstract - more link
@@ -106,5 +107,26 @@ class viewModuleSystemGit {
         if ($val['account_id'] == session::getUserId()){
             self::adminLinks($val['id']);
         }
+    }
+
+    public static function suggestBox (){ ?>
+
+Quick lookup: 
+<script type="text/javascript">
+$(function() {
+
+            $("#auto").autocomplete({
+                source: "/module_system_git/rpc",
+                minLength: 2,
+                select: function(event, ui) {
+                    var redirect = ui.item.id;
+                    location.href = "/module_system_git/more/" +redirect;
+                }
+            });
+        });
+
+</script>
+<input type="text" id="auto" />
+<?
     }
 }

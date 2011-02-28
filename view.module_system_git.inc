@@ -84,6 +84,7 @@ class viewModuleSystemGit {
     public static function viewMore (){
         $val = moduleSystemGit::getModule();
         
+        
         // title
         print "<h3>";
         echo $val['title'] . " ";

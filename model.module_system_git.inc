@@ -297,8 +297,15 @@ class moduleSystemGit {
 
     public static function getModule (){
         $id = moduleSystemGit::getModuleId();
+
+
         $db = new db();
         $val = $db->selectOne('module_system_git', 'id', $id);
+        $filters = get_module_ini('module_system_git_filters');
+
+        $val['abstract'] = cos_htmlentities_decode($val['abstract']);
+        $val['abstract'] = get_filtered_content($filters, $val['abstract']);
+
         return $val;
 
     }

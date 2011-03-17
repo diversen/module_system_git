@@ -99,35 +99,11 @@ class moduleSystemGit {
                 }
             }
 
-            /**
-            $row = $db->selectOne('module_system_git', 'url', $_POST['url']);
-            if ($row){
-                if ($method == 'insert'){
-                    self::$errors[] = lang::translate('module_system_git_error_url_exists');
-                }
-                if ($method == 'update'){
-                    if ($row['id'] != self::getModuleId()){
-                        self::$errors[] = lang::translate('module_system_git_error_url_exists');
-                    }
-                }
-            }*/
 
             if (empty($_POST['clone_url'])){
                 self::$errors[] = lang::translate('module_system_git_error_clone_url');
             }
 
-            /*
-            $row = $db->selectOne('module_system_git', 'clone_url', $_POST['clone_url']);
-            if ($row){
-                 if ($method == 'insert'){
-                    self::$errors[] = lang::translate('module_system_git_error_clone_url_exists');
-                }
-                if ($method == 'update'){
-                    if ($row['id'] != self::getModuleId()){
-                        self::$errors[] = lang::translate('module_system_git_error_clone_url_exists');
-                    }
-                }       
-            }*/
 
             if (!empty($_POST['clone_url'])){
                 $tag = latest_tag($_POST['clone_url']);

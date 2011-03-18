@@ -2,7 +2,7 @@
 
 class viewModuleSystemGit {
 
-    public static function moduleFilterOption($selected = null){
+    public static function moduleFilterOption($selected = null, $action = null){
         // remember the filtering
         if (isset($_GET['module_system_filter'])){
             $_GET['module_system_filter'] = filter_input(
@@ -16,9 +16,13 @@ class viewModuleSystemGit {
             $selected = $_SESSION['module_system_filter'];
         }
 
+        if (!$action){
+            $action = "\"/module_system_git/index\"";
+        }
+
         $str = '';
         $str.= '<div id="module_system_search">';
-        $str.= '<form method="get" action="/module_system_git/index">';
+        $str.= "<form method=\"get\" action=\"$action\">";
         $extras = array();
         $extras[0] = array('id' => '0', 'title' => lang::translate('Show All'));
         $str.= view_drop_down_db(
@@ -53,8 +57,8 @@ class viewModuleSystemGit {
             self::installInfo($val);
 
             // admin options
-            if ($val['account_id'] == session::getUserId()){
-                self::adminLinks($val['id']);
+            if ( ($val['account_id'] == session::getUserId()) || session::isAdmin()){
+                self::adminLinks($val);
             }
         }        
     }
@@ -74,10 +78,22 @@ class viewModuleSystemGit {
         print "</p>\n";
     }
 
-    public static function adminLinks($id){
+    public static function adminLinks(&$val){
         echo "<p>\n";
-        echo create_link("/module_system_git/user/edit/$id", lang::translate('module_system_git_edit')) . " | ";
-        echo create_link("/module_system_git/user/delete/$id", lang::translate('module_system_git_delete'));
+        echo create_link("/module_system_git/user/edit/$val[id]", lang::translate('module_system_git_edit'));
+        echo MENU_SUB_SEPARATOR;
+        echo create_link("/module_system_git/user/delete/$val[id]", lang::translate('module_system_git_delete'));
+
+        if (session::isAdmin() && ($val['published'] == 1) ){
+            echo MENU_SUB_SEPARATOR;
+            echo create_link("/module_system_git/admin/hide/$val[id]", lang::translate('module_system_git_hide'));
+            //echo create_link("/module_system_git/admin/delete/$val[id]", lang::translate('module_system_git_delete'));
+        } else {
+            echo MENU_SUB_SEPARATOR;
+            echo create_link("/module_system_git/admin/show/$val[id]", lang::translate('module_system_git_show'));
+
+        }
+
         echo "<p/>\n";
     }
 
@@ -105,8 +121,8 @@ class viewModuleSystemGit {
         self::installInfo($val);
 
         // admin options
-        if ($val['account_id'] == session::getUserId()){
-            self::adminLinks($val['id']);
+        if ( ($val['account_id'] == session::getUserId()) || session::isAdmin()){
+            self::adminLinks($val);
         }
     }
 

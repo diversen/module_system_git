@@ -28,7 +28,7 @@ $_COS_LANG_MODULE['module_system_git_error_clone_url_no_tag'] = 'Your module nee
 $_COS_LANG_MODULE['module_system_git_error_clone_url_tag_not_float'] = 'Your module needs to use floats as version tags';
 // Translation of file /home/dennis/www/coscms/modules/module_system_git/user/add.php
 
-$_COS_LANG_MODULE['module_system_git_module_created'] = 'Module Created';
+$_COS_LANG_MODULE['module_system_git_module_created'] = 'Module has been created. Your module will be ativated when it has been verfied - you will recieve an email';
 // Translation of file /home/dennis/www/coscms/modules/module_system_git/user/delete.php
 
 $_COS_LANG_MODULE['module_system_git_delete_module'] = 'Delete_Module';
@@ -41,3 +41,6 @@ $_COS_LANG_MODULE['module_system_git_module_updated'] = 'Module Updated';
 $_COS_LANG_MODULE['module_system_git_read_more'] = '(More info)';
 $_COS_LANG_MODULE['module_system_git_visit_website'] = 'Website';
 
+
+$_COS_LANG_MODULE['module_system_git_hide'] = 'Hide';
+$_COS_LANG_MODULE['module_system_git_show'] = 'Show';

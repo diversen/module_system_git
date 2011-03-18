@@ -13,3 +13,6 @@ $_COS_LANG_MODULE['module_system_git_menu_user'] = 'Your Modules';
 $_COS_LANG_MODULE['module_system_git_menu_add'] = 'Add New Module';
 
 
+
+$_COS_LANG_MODULE['module_system_git_menu_admin'] = 'Admin';
+$_COS_LANG_MODULE['module_system_git_menu_admin_list'] = 'Hidden Modules';

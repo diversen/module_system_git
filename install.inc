@@ -9,6 +9,7 @@ $_INSTALL['MAIN_MENU_ITEM'] = array (
     'title' => 'Modules',
     'url' => '/module_system_git/index',
     'module_name' => 'module_system_git',
+    'auth' => '',
     'parent' => 0,
     'weight' => 7,
 );

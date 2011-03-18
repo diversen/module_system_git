@@ -21,6 +21,7 @@ if(isset($_GET['term'])) {
         } else {
             $query = "SELECT id, title as value FROM module_system_git WHERE type = " . db::$dbh->quote($filter). " AND title LIKE ". db::$dbh->quote("%" . $queryString . "%");
         }
+        $query.= " AND published = 1";
         
         $rows = $db->selectQuery($query);
         $json = json_encode($rows);

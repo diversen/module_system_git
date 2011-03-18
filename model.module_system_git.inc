@@ -102,6 +102,20 @@ class moduleSystemGit {
 
             if (empty($_POST['clone_url'])){
                 self::$errors[] = lang::translate('module_system_git_error_clone_url');
+            } else {
+
+
+                $row = $db->selectOne('module_system_git', 'clone_url', $_POST['clone_url']);
+
+                if ($row && $method == 'insert'){
+                    self::$errors[] = lang::translate('module_system_git_error_clone_url_exists');
+                }
+
+                if ($row && $method == 'update'){
+                    if ($row['id'] != self::getUserModuleId()){
+                        self::$errors[] = lang::translate('module_system_git_error_clone_url_exists');
+                    }
+                }
             }
 
 
@@ -121,7 +135,12 @@ class moduleSystemGit {
     public static function insert(){
         $db = new db();
         $_POST['account_id'] = session::getUserId();
+
+
         $values = db::prepareToPost();
+        if (session::isAdmin()){
+            $values['published'] = 1;
+        }
         return $db->insert('module_system_git', $values);
     }
 
@@ -197,13 +216,16 @@ class moduleSystemGit {
      */
     public static function getAllModules($from = 0, $limit = 10){
         $selected = self::getModuleFilter();
-        if ($selected){
-            $where = array ('type' => $selected);
-        } else {
-            $where = null;
+
+        $search = array ();
+        if (!session::isAdmin()){
+            $search['published'] = 1;
         }
+        if ($selected){
+            $search['type'] = $selected;
+        } 
         $db = new db();
-        $rows = $db->selectAll('module_system_git', null, $where, $from, $limit, 'title', true);
+        $rows = $db->selectAll('module_system_git', null, $search, $from, $limit, 'title', true);
         return $rows;
     }
     // }}}
@@ -227,19 +249,43 @@ class moduleSystemGit {
         return $rows;
     }
     // }}}
-    public static function getNumRows ($user = false){
+
+    public static function getAllAdminModules($from = 0, $limit = 10){
+        $selected = self::getModuleFilter();
+        if ($selected){
+            $where = array ('type' => $selected);
+        } else {
+            $where = array ();
+        }
+        $db = new db();
+        $where['published'] = 0;
+        $rows = $db->selectAll('module_system_git', null, $where, $from, $limit, 'created', true);
+        return $rows;
+    }
+    // }}}
+
+    public static function getNumRows ($user = false, $admin = false){
         $db = new db();
 
-        
         $type = self::getModuleFilter();
+        //$search =  array('type' => $type);
+
+        if ($admin){
+            $search = array ('published' => 0);
+            return $db->getNumRows('module_system_git', $search);
+        }
+
         if (!$user){
             if ($type == 0){
-                return $db->getNumRows('module_system_git');
+                $search = array ('published' => 1);
+                return $db->getNumRows('module_system_git', $search);
             } else {
-                return $db->getNumRows('module_system_git', array('type' => $type));
+                
+                $search = array ('published' => 1, 'type' => $type);
+                return $db->getNumRows('module_system_git', $search);
             }
         } else {
-        
+            // users personal modules - no need to be published
             $account_id = session::getUserId();
             if ($type == 0 ){
                 return $db->getNumRows('module_system_git', array ('account_id' => $account_id));
@@ -247,6 +293,20 @@ class moduleSystemGit {
                 return $db->getNumRows('module_system_git', array('type' => $type, 'account_id' => $account_id));
             }
         }
+    }
+
+    public static function hideModule (){
+        $id = uri::$fragments[3];
+        $db = new db();
+        $values = array ('published' => 0);
+        return $db->update('module_system_git', $values, $id);
+    }
+
+    public static function showModule (){
+        echo $id = uri::$fragments[3];
+        $db = new db();
+        $values = array ('published' => 1);
+        return $db->update('module_system_git', $values, $id);
     }
 
     // {{{ checkModuleOwner

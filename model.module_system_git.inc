@@ -337,6 +337,12 @@ class moduleSystemGit {
 
         $db = new db();
         $val = $db->selectOne('module_system_git', 'id', $id);
+        if (empty($val)){
+            session::setActionMessage(lang::translate('module_system_moved_permanently'));
+            header ("HTTP/1.1 301 Moved Permanently");
+            header ("Location: /module_system_git/index");
+        }
+
         $filters = get_module_ini('module_system_git_filters');
 
         $val['abstract'] = cos_htmlentities_decode($val['abstract']);

@@ -1,6 +1,6 @@
 <?php
 
-include_once "mySqlForm.php";
+//include_once "mySqlForm.php";
 include_once "pearPager.php";
 
 class moduleSystemGit {
@@ -28,6 +28,7 @@ class moduleSystemGit {
     * @param int       id (if delete or update)
     */
     public static function Form($method, $id = null, $values = array(), $caption = null){
+        /*
         $fields_captions =
             array(
                 'title' => lang::translate('module_system_git_form_title'),
@@ -65,6 +66,8 @@ class moduleSystemGit {
             if (empty($caption)) $caption = lang::translate('Add Module');
         }
         $tf->createForm('', 'post',  'module_system_git', '', 'multipart/form-data',  $caption);
+         * 
+         */
     }
     // }}}
 
@@ -345,7 +348,7 @@ class moduleSystemGit {
 
         $filters = get_module_ini('module_system_git_filters');
 
-        $val['abstract'] = cos_htmlentities_decode($val['abstract']);
+        $val['abstract'] = html::specialDecode($val['abstract']);
         $val['abstract'] = get_filtered_content($filters, $val['abstract']);
 
         return $val;

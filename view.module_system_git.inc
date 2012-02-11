@@ -43,14 +43,14 @@ class viewModuleSystemGit {
             // title
             echo "<hr />\n";
             echo "<h3>";
-            echo create_link("/module_system_git/more/$val[id]", $val['title']);
+            echo html::createLink("/module_system_git/more/$val[id]", $val['title']);
             echo "</h3>\n";
 
             // abstract - more link
             echo "<p>\n";
-            print substr2 ($val['abstract'], 150);
+            echo strings::substr2 ($val['abstract'], 150);
 
-            echo create_link("/module_system_git/more/$val[id]", lang::translate('module_system_git_read_more'));
+            echo html::createLink("/module_system_git/more/$val[id]", lang::translate('module_system_git_read_more'));
             echo "</p>\n";
             
             // install info
@@ -80,17 +80,17 @@ class viewModuleSystemGit {
 
     public static function adminLinks(&$val){
         echo "<p>\n";
-        echo create_link("/module_system_git/user/edit/$val[id]", lang::translate('module_system_git_edit'));
+        echo html::createLink("/module_system_git/user/edit/$val[id]", lang::translate('module_system_git_edit'));
         echo MENU_SUB_SEPARATOR;
-        echo create_link("/module_system_git/user/delete/$val[id]", lang::translate('module_system_git_delete'));
+        echo html::createLink("/module_system_git/user/delete/$val[id]", lang::translate('module_system_git_delete'));
 
         if (session::isAdmin() && ($val['published'] == 1) ){
             echo MENU_SUB_SEPARATOR;
-            echo create_link("/module_system_git/admin/hide/$val[id]", lang::translate('module_system_git_hide'));
-            //echo create_link("/module_system_git/admin/delete/$val[id]", lang::translate('module_system_git_delete'));
+            echo html::createLink("/module_system_git/admin/hide/$val[id]", lang::translate('module_system_git_hide'));
+            //echo html::createLink("/module_system_git/admin/delete/$val[id]", lang::translate('module_system_git_delete'));
         } else {
             echo MENU_SUB_SEPARATOR;
-            echo create_link("/module_system_git/admin/show/$val[id]", lang::translate('module_system_git_show'));
+            echo html::createLink("/module_system_git/admin/show/$val[id]", lang::translate('module_system_git_show'));
 
         }
 
@@ -114,7 +114,7 @@ class viewModuleSystemGit {
         print lang::translate('module_system_git_visit_website') . " :: ";
 
 
-        echo create_link($val['url'], $val['url']);
+        echo html::createLink($val['url'], $val['url']);
         echo "</p>\n";
 
         // install info

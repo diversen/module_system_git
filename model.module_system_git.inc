@@ -28,6 +28,56 @@ class moduleSystemGit {
     * @param int       id (if delete or update)
     */
     public static function Form($method, $id = null, $values = array(), $caption = null){
+        
+        $form = new HTML();
+        
+        if ($method == 'delete') {
+            $form->formStart('module_system_git');
+            $form->legend(lang::translate('Delete Module'));
+            $form->label('submit', '');
+            $form->submit('submit', lang::system('submit')); 
+            $form->formEnd();
+            echo $form->getStr();
+            return;
+        }
+        if ($method == 'update') {
+            $db = new db();
+            $values = $db->selectOne('module_system_git', 'id', $id);
+            $form->init($values, 'submit');
+            $legend = lang::translate('Edit Module');
+        }
+        
+        if ($method =='insert') {
+            $form->init(array(), 'submit');
+            $legend = lang::translate('Add Module');
+        }
+        
+        $form->formStart('module_system_git');
+        $form->legend($legend);
+        $form->label('title', lang::translate('module_system_git_form_title'));
+        $form->text('title');
+    
+        $form->label('abstract', lang::translate('module_system_git_form_abstract'));
+        $form->textareaMed('abstract');
+        
+        $form->label('url', lang::translate('module_system_git_form_url'));
+        $form->text('url');
+        
+        $form->label('clone_url', lang::translate('module_system_git_form_clone_url'));
+        $form->text('clone_url');
+        
+       
+        $db = new db();
+        $rows = $db->selectAll('module_system_git_type');
+
+        $form->label('type', lang::translate('module_system_git_form_type'));
+        $form->select('type', $rows, 'title', 'id', null, null, null);
+        
+        $form->label('submit', '');
+        $form->submit('submit', lang::system('submit'));
+        
+        $form->formEnd();
+        echo $form->getStr();
         /*
         $fields_captions =
             array(
@@ -72,7 +122,7 @@ class moduleSystemGit {
     // }}}
 
     public static function sanitize (){
-        $_POST = cos_htmlspecialchars($_POST);
+        $_POST = html::specialEncode($_POST);
 
     }
 

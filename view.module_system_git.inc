@@ -38,7 +38,7 @@ class viewModuleSystemGit {
     }
 
     public static function viewModules ($rows){
-        foreach ($rows as $key => $val){
+        foreach ($rows as $val){
             
             // title
             echo "<hr />\n";

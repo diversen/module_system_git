@@ -12,7 +12,7 @@ $_COS_LANG_MODULE['module_system_git_install'] = 'Install';
 $_COS_LANG_MODULE['module_system_git_form_title'] = 'Title. Must be unique';
 $_COS_LANG_MODULE['module_system_git_form_abstract'] = 'Write an abstract (you can use <a href="http://daringfireball.net/projects/markdown/syntax">markdown syntax</a>)';
 $_COS_LANG_MODULE['module_system_git_form_url'] = 'Enter a url with more info about module';
-$_COS_LANG_MODULE['module_system_git_form_clone_url'] = 'Enter a public clone url';
+$_COS_LANG_MODULE['module_system_git_form_clone_url'] = 'Enter a public clone url e.g. git://github.com/diversen/questions.git)';
 $_COS_LANG_MODULE['module_system_git_form_type'] = 'Type of module: Module, Template or Profile';
 $_COS_LANG_MODULE['Delete Module'] = 'Delete Module';
 $_COS_LANG_MODULE['Edit Module'] = 'Edit Module';

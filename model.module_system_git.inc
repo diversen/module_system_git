@@ -16,9 +16,6 @@ class moduleSystemGit {
         return (int)$uri->fragment(3);
     }
 
-
-
-     // {{{ viewModuleForm($method, $id = null, $values = array(), $caption = null)
    /**
     * method for creating a form for insert, update and deleting entries
     * in module_system module
@@ -78,48 +75,8 @@ class moduleSystemGit {
         
         $form->formEnd();
         echo $form->getStr();
-        /*
-        $fields_captions =
-            array(
-                'title' => lang::translate('module_system_git_form_title'),
-                'abstract' => lang::translate('module_system_git_form_abstract'),
-                'url' => lang::translate('module_system_git_form_url'),
-                'clone_url' => lang::translate('module_system_git_form_clone_url'),
-                'type' => lang::translate('module_system_git_form_type'),
-
-        );
-        
-        $fields = array('id', 'title', 'abstract', 'url','clone_url', 'type');
-        $tf = new mySqlForm('module_system_git', $fields, $values);
-
-        $tf->setToMany('type', 'module_system_git_type', 'id', 'title', 'dropdown');
-        $tf->setLabels($fields_captions);
-
-        if (isset($id)){
-            if ($method == 'delete'){
-                if (empty($caption)) $caption = lang::translate('Delete Module');
-            } else {
-                // no title if updating
-                $fields = array('id', 'abstract', 'url', 'clone_url', 'type');
-                $tf = new mySqlForm('module_system_git', $fields, $values);
-
-                $tf->setToMany('type', 'module_system_git_type', 'id', 'title', 'dropdown');
-                $tf->setLabels($fields_captions);
-                if (empty($caption)){
-                    $caption = lang::translate('Edit Module');
-                }
-            }
-            $tf->setMethod($method, $id);
-
-        } else {
-            $tf->setMethod($method);
-            if (empty($caption)) $caption = lang::translate('Add Module');
-        }
-        $tf->createForm('', 'post',  'module_system_git', '', 'multipart/form-data',  $caption);
-         * 
-         */
     }
-    // }}}
+
 
     public static function sanitize (){
         $_POST = html::specialEncode($_POST);
@@ -197,7 +154,6 @@ class moduleSystemGit {
         return $db->insert('module_system_git', $values);
     }
 
-    // {{{ updateModule()
     /**
      * method for updating a module in database
      * (access control is cheched in controller file)
@@ -211,8 +167,7 @@ class moduleSystemGit {
         $res = $db->update('module_system_git', $values, self::getUserModuleId());
         return $res;
     }
-    // }}}
-    // {{{ deleteModule()
+
     /**
      * method for deleting a module
      * (access control is cheched in controller file)
@@ -223,9 +178,7 @@ class moduleSystemGit {
         $res = $db->delete('module_system_git', 'id', self::getUserModuleId());
         return $res;
     }
-    // }}}
 
-    // {{{ getUserModules()
     /**
      * method for fetching modules belonging to a user
      * @return array assoc rows of modules belonging to user
@@ -237,9 +190,6 @@ class moduleSystemGit {
         return $rows;
     }
 
-    // }}}
-    
-    // {{{ getModuleFilter
     /**
      * @return  int  category_id (module type) for filtereing modules.
      */
@@ -258,8 +208,7 @@ class moduleSystemGit {
         }
         return $selected;
     }
-    // }}}
-    // {{{ getAllModules($from = 0, $limit = 10)
+
     /**
      * method for getting all modules
      *
@@ -281,8 +230,7 @@ class moduleSystemGit {
         $rows = $db->selectAll('module_system_git', null, $search, $from, $limit, 'title', true);
         return $rows;
     }
-    // }}}
-        // {{{ getAllModules($from = 0, $limit = 10)
+
     /**
      * method for getting all modules
      *
@@ -301,7 +249,7 @@ class moduleSystemGit {
         $rows = $db->selectAll('module_system_git', null, $where, $from, $limit, 'title', true);
         return $rows;
     }
-    // }}}
+
 
     public static function getAllAdminModules($from = 0, $limit = 10){
         $selected = self::getModuleFilter();
@@ -315,7 +263,6 @@ class moduleSystemGit {
         $rows = $db->selectAll('module_system_git', null, $where, $from, $limit, 'created', true);
         return $rows;
     }
-    // }}}
 
     public static function getNumRows ($user = false, $admin = false){
         $db = new db();
@@ -362,7 +309,6 @@ class moduleSystemGit {
         return $db->update('module_system_git', $values, $id);
     }
 
-    // {{{ checkModuleOwner
     /**
      * method for checking if a module belongs to logged in user or not
      *
@@ -382,7 +328,6 @@ class moduleSystemGit {
             return true;
         }
     }
-    // }}}
 
     public static function getModule (){
         $id = moduleSystemGit::getModuleId();

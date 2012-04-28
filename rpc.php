@@ -10,7 +10,7 @@
 $db = new db();
 
 if(isset($_GET['term'])) {
-    $queryString = cos_htmlentities($_GET['term']);
+    $queryString = html::specialEncode($_GET['term']);
 
 
     if(strlen($queryString) > 2) {

@@ -17,7 +17,8 @@ class viewModuleSystemGit {
         }
 
         if (!$action){
-            $action = "\"/module_system_git/index\"";
+            $action = "/module_system_git/index";
+            //$action = '';
         }
 
         $str = '';

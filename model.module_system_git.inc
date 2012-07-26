@@ -3,6 +3,9 @@
 //include_once "mySqlForm.php";
 include_once "pearPager.php";
 
+include_template_inc('jquery-markedit');
+jquery_markedit_load_assets();
+
 class moduleSystemGit {
     public static $errors = null;
 
@@ -55,7 +58,8 @@ class moduleSystemGit {
         $form->text('title');
     
         $form->label('abstract', lang::translate('module_system_git_form_abstract'));
-        $form->textareaMed('abstract');
+        $form->textareaSmall('abstract', null, array ('class' => 'markdown'));
+        //$form->textareaMed($name, $value, $extra)
         
         $form->label('url', lang::translate('module_system_git_form_url'));
         $form->text('url');

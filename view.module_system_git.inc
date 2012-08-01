@@ -49,8 +49,13 @@ class viewModuleSystemGit {
 
             // abstract - more link
             echo "<p>\n";
-            echo strings::substr2 ($val['abstract'], 150);
-
+            
+            
+            $str = strings::substr2 ($val['abstract'], 150);
+            echo get_filtered_content(
+                    config::getModuleIni('module_system_git_filters'), 
+                    $str
+            );
             echo html::createLink("/module_system_git/more/$val[id]", lang::translate('module_system_git_read_more'));
             echo "</p>\n";
             
@@ -65,18 +70,29 @@ class viewModuleSystemGit {
     }
 
     public static function installInfo(&$val){
-        print "<p>\n";
-        print lang::translate('module_system_git_install') . " :: ";
-        print "<pre>\n";
+        echo "<p>\n";
+        echo lang::translate('module_system_git_install') . " :: ";
+        echo "<pre>\n";
         if ($val['type'] == '1'){
-            print "./coscli.sh git --mod-in $val[clone_url]";
+            echo "./coscli.sh git --mod-in $val[clone_url]";
         } else if ($val['type'] == '2') {
-            print "./coscli.sh git --temp-in $val[clone_url]";
+            echo "./coscli.sh git --temp-in $val[clone_url]";
         } else if ($val['type'] == '3') {
-            print "./coscli.sh git --pro-in $val[clone_url]";
+            echo "./coscli.sh git --pro-in $val[clone_url]";
         }
-        print "</pre>\n";
-        print "</p>\n";
+        echo "</pre>\n";
+        echo "Install master:";
+        echo "<pre>\n";
+        if ($val['type'] == '1'){
+            echo "./coscli.sh git --mod-in --master $val[clone_url]";
+        } else if ($val['type'] == '2') {
+            echo "./coscli.sh git --temp-in --master $val[clone_url]";
+        } else if ($val['type'] == '3') {
+            echo "./coscli.sh git --pro-in --master $val[clone_url]";
+        }
+        echo "</pre>\n";
+        
+        echo "</p>\n";
     }
 
     public static function adminLinks(&$val){
@@ -103,16 +119,16 @@ class viewModuleSystemGit {
         
         
         // title
-        print "<h3>";
+        echo "<h3>";
         echo $val['title'] . " ";
         echo "</h3>\n";
 
         // abstract - more link
         echo "<p>\n";
-        print ($val['abstract']);
-        print "</p>\n";
-        print "<p>\n";
-        print lang::translate('module_system_git_visit_website') . " :: ";
+        echo ($val['abstract']);
+        echo "</p>\n";
+        echo "<p>\n";
+        echo lang::translate('module_system_git_visit_website') . " :: ";
 
 
         echo html::createLink($val['url'], $val['url']);
@@ -129,7 +145,7 @@ class viewModuleSystemGit {
 
     public static function suggestBox (){ ?>
 
-<br />Quick lookup (min 3 chars):
+<br />Quick lookup:
 <script type="text/javascript">
 $(function() {
 

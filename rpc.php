@@ -9,7 +9,7 @@
 
 $db = new db();
 
-if(isset($_GET['term'])) {
+if(isset($_GET['term']) && ( strlen($_GET['term']) >= 1)) {
     $queryString = html::specialEncode($_GET['term']);
 
 

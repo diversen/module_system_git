@@ -1,7 +1,7 @@
 <?php
 
-//include_once "mySqlForm.php";
-include_once "pearPager.php";
+
+
 
 include_template_inc('jquery-markedit');
 jquery_markedit_load_assets();

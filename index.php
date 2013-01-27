@@ -1,5 +1,7 @@
 <?php
 
+$filters = config::getModuleIni('module_system_git_filters');
+moduleloader::includeFilters($filters);
 $num_rows = moduleSystemGit::getNumRows();
 $pager = new pearPager($num_rows);
 viewModuleSystemGit::moduleFilterOption();

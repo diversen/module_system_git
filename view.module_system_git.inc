@@ -52,10 +52,15 @@ class viewModuleSystemGit {
             
             
             $str = strings::substr2 ($val['abstract'], 150);
-            echo get_filtered_content(
-                    config::getModuleIni('module_system_git_filters'), 
+            $filters = config::getModuleIni('module_system_git_filters');
+            
+            echo moduleloader::getFilteredContent(
+                    $filters, 
                     $str
             );
+            
+
+            
             echo html::createLink("/module_system_git/more/$val[id]", lang::translate('module_system_git_read_more'));
             echo "</p>\n";
             
@@ -163,4 +168,42 @@ $(function() {
 <input type="text" id="auto" />
 <?
     }
+}
+
+/**
+ * function for creating a select dropdown from a database table.
+ * @ignore
+ * @deprecated see html::select()
+ * @param   string  the name of the select filed
+ * @param   string  the database table to select from
+ * @param   string  the database field which will be used as name of the select element
+ * @param   int     the database field which will be used as id of the select element
+ * @param   int     the element which will be selected
+ * @param   array   array of other non db options
+ * @param   string  behavior e.g. onChange="this.form.submit()"
+ * @return  string  the select element to be added to a form
+ */
+function view_drop_down_db($name, $table, $field, $id, $selected=null, $extras = null, $behav = null){
+    $db = new db();
+    $dropdown = "<select name=\"$name\" ";
+    if (isset($behav)){
+        $dropdown.= $behav;
+        
+    }
+    $dropdown.= ">\n";
+    $rows = $db->selectAll($table);
+    if (isset($extras)){
+        $rows = array_merge($extras, $rows);
+    }
+    foreach($rows as $row){
+        if ($row[$id] == $selected){
+            $s = ' selected';
+        } else {
+            $s = '';
+        }
+
+        $dropdown.= '<option value="'.$row[$id].'"' . $s . '>'.$row[$field].'</option>'."\n";
+    }
+    $dropdown.= '</select>'."\n";
+    return $dropdown;
 }

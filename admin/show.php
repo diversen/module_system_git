@@ -1,6 +1,6 @@
 <?php
 
-include_module ('module_system_git');
+moduleloader::includeModule ('module_system_git');
 
 if (!session::isAdmin()){
     return;

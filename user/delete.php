@@ -5,7 +5,7 @@
  *
  * @package    module_system
  */
-include_module ("module_system_git");
+moduleloader::includeModule ("module_system_git");
 template::setTitle(lang::translate('module_system_git_delete_module'));
 
 if (!moduleSystemGit::checkModuleOwner()){

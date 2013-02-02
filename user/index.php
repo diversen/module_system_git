@@ -1,6 +1,6 @@
 <?php
 
-include_module('module_system_git');
+moduleloader::includeModule('module_system_git');
 
 $num_rows = moduleSystemGit::getNumRows($user = true);
 

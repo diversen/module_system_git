@@ -3,7 +3,7 @@
 
 
 
-include_template_inc('jquery-markedit');
+moduleloader::includeTemplateCommon('jquery-markedit');
 jquery_markedit_load_assets();
 
 class moduleSystemGit {
@@ -348,7 +348,7 @@ class moduleSystemGit {
         $filters = get_module_ini('module_system_git_filters');
 
         $val['abstract'] = html::specialDecode($val['abstract']);
-        $val['abstract'] = get_filtered_content($filters, $val['abstract']);
+        $val['abstract'] = moduleloader::getFilteredContent($filters, $val['abstract']);
 
         return $val;
 

@@ -8,7 +8,7 @@ if (!empty($_POST['insert'])){
     if (moduleSystemGit::$errors == null){
         moduleSystemGit::insert();
     } else {
-        view_form_errors(moduleSystemGit::$errors);
+        html::errors(moduleSystemGit::$errors);
         moduleSystemGit::Form('insert');
     }
 } else {

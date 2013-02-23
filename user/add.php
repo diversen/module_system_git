@@ -18,9 +18,10 @@ if (!empty($_POST['submit'])){
             header("Location: /module_system_git/user/index");
         }
     } else {
-        view_form_errors(moduleSystemGit::$errors);
+        html::errors(moduleSystemGit::$errors);
         moduleSystemGit::Form('insert');
     }
 } else {
     moduleSystemGit::Form('insert');
 }
+

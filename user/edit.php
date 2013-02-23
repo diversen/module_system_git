@@ -21,7 +21,7 @@ if (!empty($_POST)){
             header("Location: /module_system_git/user/index");
         }
     } else {
-        view_form_errors(moduleSystemGit::$errors);
+        html::errors(moduleSystemGit::$errors);
         moduleSystemGit::Form('update', moduleSystemGit::getUserModuleId());
     }
 } else {

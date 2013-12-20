@@ -43,9 +43,9 @@ class viewModuleSystemGit {
             
             // title
             echo "<hr />\n";
-            echo "<h3>";
-            echo html::createLink("/module_system_git/more/$val[id]", $val['title']);
-            echo "</h3>\n";
+            
+            echo html::getHeadline(html::createLink("/module_system_git/more/$val[id]", $val['title']));
+            
 
             // abstract - more link
             echo "<p>\n";
@@ -122,11 +122,8 @@ class viewModuleSystemGit {
     public static function viewMore (){
         $val = moduleSystemGit::getModule();
         
+        echo html::getHeadline($val['title']);
         
-        // title
-        echo "<h3>";
-        echo $val['title'] . " ";
-        echo "</h3>\n";
 
         // abstract - more link
         echo "<p>\n";

@@ -345,7 +345,7 @@ class moduleSystemGit {
             header ("Location: /module_system_git/index");
         }
 
-        $filters = get_module_ini('module_system_git_filters');
+        $filters = config::getModuleIni('module_system_git_filters');
 
         $val['abstract'] = html::specialDecode($val['abstract']);
         $val['abstract'] = moduleloader::getFilteredContent($filters, $val['abstract']);

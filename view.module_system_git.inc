@@ -163,7 +163,7 @@ $(function() {
 
 </script>
 <input type="text" id="auto" />
-<?
+<?php
     }
 }
 

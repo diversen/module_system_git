@@ -1,0 +1,32 @@
+<?php
+
+$_COS_LANG_MODULE['module_system_git_delete_module'] = '删除模块';
+$_COS_LANG_MODULE['module_system_git_module_deleted'] = '模块中删除';
+$_COS_LANG_MODULE['module_system_git_module_created'] = '模块已创建。当它已经verfied你的模块将被ativated  - 你会收到一封电子邮件';
+$_COS_LANG_MODULE['module_system_git_module_updated'] = '模块更新';
+$_COS_LANG_MODULE['Show All'] = '显示全部';
+$_COS_LANG_MODULE['Search'] = '搜索';
+$_COS_LANG_MODULE['module_system_git_read_more'] = '（更多信息）';
+$_COS_LANG_MODULE['module_system_git_install'] = '安装';
+$_COS_LANG_MODULE['module_system_git_edit'] = '编辑';
+$_COS_LANG_MODULE['module_system_git_delete'] = '删除';
+$_COS_LANG_MODULE['module_system_git_hide'] = '隐藏';
+$_COS_LANG_MODULE['module_system_git_show'] = '节目';
+$_COS_LANG_MODULE['module_system_git_visit_website'] = '网站';
+$_COS_LANG_MODULE['Delete Module'] = '删除模块';
+$_COS_LANG_MODULE['Edit Module'] = '编辑模块';
+$_COS_LANG_MODULE['Add Module'] = '添加模块';
+$_COS_LANG_MODULE['module_system_git_form_title'] = '标题。必须是唯一的';
+$_COS_LANG_MODULE['module_system_git_form_abstract'] = '写一个抽象的（你可以用<a href="http://daringfireball.net/projects/markdown/syntax">Markdown语法</a> ）';
+$_COS_LANG_MODULE['module_system_git_form_url'] = '与有关模块的详细信息输入一个网址';
+$_COS_LANG_MODULE['module_system_git_form_clone_url'] = '进入公共克隆URL如<span class="notranslate">git://github.com/diversen/questions.git</span> ）';
+$_COS_LANG_MODULE['module_system_git_form_type'] = '模块类型：模块，模板或配置文件';
+$_COS_LANG_MODULE['module_system_git_error_title'] = '不是一个有效的标题。必须至少为7个字符';
+$_COS_LANG_MODULE['module_system_git_error_title_exists'] = '标题存在';
+$_COS_LANG_MODULE['module_system_git_error_abstract'] = '请提供一个简短的摘要';
+$_COS_LANG_MODULE['module_system_git_error_url'] = '不是有效的URL';
+$_COS_LANG_MODULE['module_system_git_error_clone_url'] = '不是一个有效的克隆网址';
+$_COS_LANG_MODULE['module_system_git_error_clone_url_exists'] = '复制网址已存在';
+$_COS_LANG_MODULE['module_system_git_error_clone_url_no_tag'] = '你的模块需要至少一个标签';
+$_COS_LANG_MODULE['module_system_git_error_clone_url_tag_not_float'] = '你的模块需要使用浮点数作为版本标签';
+$_COS_LANG_MODULE['module_system_moved_permanently'] = '模块感动';

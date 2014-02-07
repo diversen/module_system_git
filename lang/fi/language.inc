@@ -1,0 +1,32 @@
+<?php
+
+$_COS_LANG_MODULE['module_system_git_delete_module'] = 'Poista moduuli';
+$_COS_LANG_MODULE['module_system_git_module_deleted'] = 'Moduuli poistettu';
+$_COS_LANG_MODULE['module_system_git_module_created'] = 'Moduuli on luotu. Sinun moduuli ativated kun se on verfied - voit vastaanottaa sähköpostia';
+$_COS_LANG_MODULE['module_system_git_module_updated'] = 'Moduuli päivitetty';
+$_COS_LANG_MODULE['Show All'] = 'Näytä kaikki';
+$_COS_LANG_MODULE['Search'] = 'Haku';
+$_COS_LANG_MODULE['module_system_git_read_more'] = '(Lisätietoja)';
+$_COS_LANG_MODULE['module_system_git_install'] = 'Asentaa';
+$_COS_LANG_MODULE['module_system_git_edit'] = 'Muokata';
+$_COS_LANG_MODULE['module_system_git_delete'] = 'Poistaa';
+$_COS_LANG_MODULE['module_system_git_hide'] = 'Piilottaa';
+$_COS_LANG_MODULE['module_system_git_show'] = 'Show';
+$_COS_LANG_MODULE['module_system_git_visit_website'] = 'Verkkosivusto';
+$_COS_LANG_MODULE['Delete Module'] = 'Poista moduuli';
+$_COS_LANG_MODULE['Edit Module'] = 'Edit Module';
+$_COS_LANG_MODULE['Add Module'] = 'Lisää Module';
+$_COS_LANG_MODULE['module_system_git_form_title'] = 'Otsikko. On oltava yksilöllinen';
+$_COS_LANG_MODULE['module_system_git_form_abstract'] = 'Kirjoita abstrakti (voit käyttää <a href="http://daringfireball.net/projects/markdown/syntax">markdown syntaksin</a> )';
+$_COS_LANG_MODULE['module_system_git_form_url'] = 'Anna url enemmän infoa moduuli';
+$_COS_LANG_MODULE['module_system_git_form_clone_url'] = 'Anna julkinen klooni url esim. <span class="notranslate">git://github.com/diversen/questions.git</span> )';
+$_COS_LANG_MODULE['module_system_git_form_type'] = 'Millainen moduuli: Moduuli, malli tai Profile';
+$_COS_LANG_MODULE['module_system_git_error_title'] = 'Ei kelvollinen nimi. On oltava vähintään 7 merkkiä';
+$_COS_LANG_MODULE['module_system_git_error_title_exists'] = 'Otsikko käytössä';
+$_COS_LANG_MODULE['module_system_git_error_abstract'] = 'Toimittakaa lyhyen tiivistelmän';
+$_COS_LANG_MODULE['module_system_git_error_url'] = 'Ei kelvollinen URL-osoite';
+$_COS_LANG_MODULE['module_system_git_error_clone_url'] = 'Ei voimassa klooni url';
+$_COS_LANG_MODULE['module_system_git_error_clone_url_exists'] = 'Clone url jo olemassa';
+$_COS_LANG_MODULE['module_system_git_error_clone_url_no_tag'] = 'Moduuli tarvitaan ainakin yksi tunniste';
+$_COS_LANG_MODULE['module_system_git_error_clone_url_tag_not_float'] = 'Moduuli tarvitsee käyttää objekteja versio tageja';
+$_COS_LANG_MODULE['module_system_moved_permanently'] = 'Moduuli muutti';

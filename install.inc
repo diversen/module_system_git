@@ -6,7 +6,7 @@
  * @package    modules
  */
 $_INSTALL['MAIN_MENU_ITEM'] = array (
-    'title' => 'Modules',
+    'title' => lang::translate('Modules', null, array ('no_translate' => true)),
     'url' => '/module_system_git/index',
     'module_name' => 'module_system_git',
     'auth' => '',

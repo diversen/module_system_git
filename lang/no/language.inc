@@ -1,0 +1,32 @@
+<?php
+
+$_COS_LANG_MODULE['module_system_git_delete_module'] = 'Slett modul';
+$_COS_LANG_MODULE['module_system_git_module_deleted'] = 'Modul slettet';
+$_COS_LANG_MODULE['module_system_git_module_created'] = 'Modulen har blitt opprettet. Modulen vil bli ativated når det har blitt verfied - vil du motta en e-post';
+$_COS_LANG_MODULE['module_system_git_module_updated'] = 'Modul oppdatert';
+$_COS_LANG_MODULE['Show All'] = 'Vis alle';
+$_COS_LANG_MODULE['Search'] = 'Søk';
+$_COS_LANG_MODULE['module_system_git_read_more'] = '(Mer informasjon)';
+$_COS_LANG_MODULE['module_system_git_install'] = 'Installer';
+$_COS_LANG_MODULE['module_system_git_edit'] = 'Rediger';
+$_COS_LANG_MODULE['module_system_git_delete'] = 'Slett';
+$_COS_LANG_MODULE['module_system_git_hide'] = 'Skjul';
+$_COS_LANG_MODULE['module_system_git_show'] = 'Vis';
+$_COS_LANG_MODULE['module_system_git_visit_website'] = 'Nettsted';
+$_COS_LANG_MODULE['Delete Module'] = 'Slett Module';
+$_COS_LANG_MODULE['Edit Module'] = 'Edit Module';
+$_COS_LANG_MODULE['Add Module'] = 'Legg Module';
+$_COS_LANG_MODULE['module_system_git_form_title'] = 'Tittel. Må være unik';
+$_COS_LANG_MODULE['module_system_git_form_abstract'] = 'Skriv en abstrakt (du kan bruke <a href="http://daringfireball.net/projects/markdown/syntax">markdown syntaks</a> )';
+$_COS_LANG_MODULE['module_system_git_form_url'] = 'Skriv inn en url med mer informasjon om modul';
+$_COS_LANG_MODULE['module_system_git_form_clone_url'] = 'Skriv inn en offentlig klone url f.eks <span class="notranslate">git://github.com/diversen/questions.git</span> )';
+$_COS_LANG_MODULE['module_system_git_form_type'] = 'Type modul: Modul, Mal eller profil';
+$_COS_LANG_MODULE['module_system_git_error_title'] = 'Ikke en gyldig tittel. Må være minst 7 tegn';
+$_COS_LANG_MODULE['module_system_git_error_title_exists'] = 'Tittel finnes';
+$_COS_LANG_MODULE['module_system_git_error_abstract'] = 'Vennligst oppgi et kort abstract';
+$_COS_LANG_MODULE['module_system_git_error_url'] = 'Ikke en gyldig url';
+$_COS_LANG_MODULE['module_system_git_error_clone_url'] = 'Ikke en gyldig klone url';
+$_COS_LANG_MODULE['module_system_git_error_clone_url_exists'] = 'Clone url allerede eksisterer';
+$_COS_LANG_MODULE['module_system_git_error_clone_url_no_tag'] = 'Din modul trenger minst ett tag';
+$_COS_LANG_MODULE['module_system_git_error_clone_url_tag_not_float'] = 'Modulen må bruke flyter som versjon tags';
+$_COS_LANG_MODULE['module_system_moved_permanently'] = 'Modul flyttet';

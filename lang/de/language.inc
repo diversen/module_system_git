@@ -1,0 +1,32 @@
+<?php
+
+$_COS_LANG_MODULE['module_system_git_delete_module'] = 'Modul löschen';
+$_COS_LANG_MODULE['module_system_git_module_deleted'] = 'Modul gelöscht';
+$_COS_LANG_MODULE['module_system_git_module_created'] = 'Modul erstellt wurde. Ihre Baugruppe ativated wenn es verfied worden ist - Sie erhalten eine E-Mail erhalten';
+$_COS_LANG_MODULE['module_system_git_module_updated'] = 'Module aktualisiert';
+$_COS_LANG_MODULE['Show All'] = 'Alle anzeigen';
+$_COS_LANG_MODULE['Search'] = 'Suche';
+$_COS_LANG_MODULE['module_system_git_read_more'] = '(Weitere Informationen)';
+$_COS_LANG_MODULE['module_system_git_install'] = 'Installieren';
+$_COS_LANG_MODULE['module_system_git_edit'] = 'Bearbeiten';
+$_COS_LANG_MODULE['module_system_git_delete'] = 'Löschen';
+$_COS_LANG_MODULE['module_system_git_hide'] = 'Verbergen';
+$_COS_LANG_MODULE['module_system_git_show'] = 'Zeigen';
+$_COS_LANG_MODULE['module_system_git_visit_website'] = 'Webseite';
+$_COS_LANG_MODULE['Delete Module'] = 'Modul löschen';
+$_COS_LANG_MODULE['Edit Module'] = 'Modul bearbeiten';
+$_COS_LANG_MODULE['Add Module'] = 'Modul hinzufügen';
+$_COS_LANG_MODULE['module_system_git_form_title'] = 'Titel. Muss eindeutig sein';
+$_COS_LANG_MODULE['module_system_git_form_abstract'] = 'Schreiben Sie eine Zusammenfassung (Sie können mit <a href="http://daringfireball.net/projects/markdown/syntax">Markdown-Syntax</a> )';
+$_COS_LANG_MODULE['module_system_git_form_url'] = 'Geben Sie eine URL mit weitere Informationen über Modul';
+$_COS_LANG_MODULE['module_system_git_form_clone_url'] = 'Geben Sie einen öffentlichen Klon url zB <span class="notranslate">git://github.com/diversen/questions.git</span> )';
+$_COS_LANG_MODULE['module_system_git_form_type'] = 'Art des Moduls: Modul, Template-oder Profil-';
+$_COS_LANG_MODULE['module_system_git_error_title'] = 'Keine gültige Titel. Muss mindestens 7 Zeichen sein';
+$_COS_LANG_MODULE['module_system_git_error_title_exists'] = 'Titel vorhanden';
+$_COS_LANG_MODULE['module_system_git_error_abstract'] = 'Bitte geben Sie eine kurze Zusammenfassung';
+$_COS_LANG_MODULE['module_system_git_error_url'] = 'Keine gültige URL';
+$_COS_LANG_MODULE['module_system_git_error_clone_url'] = 'Keine gültige Klon url';
+$_COS_LANG_MODULE['module_system_git_error_clone_url_exists'] = 'Clone url existiert bereits';
+$_COS_LANG_MODULE['module_system_git_error_clone_url_no_tag'] = 'Ihr Modul benötigen mindestens einen Tag';
+$_COS_LANG_MODULE['module_system_git_error_clone_url_tag_not_float'] = 'Ihr Modul muss Schwimmer als Version Tags verwenden';
+$_COS_LANG_MODULE['module_system_moved_permanently'] = 'Modul bewegt';

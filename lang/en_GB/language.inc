@@ -6,13 +6,25 @@
 $_COS_LANG_MODULE['module_system_git_delete_module'] = 'Delete module';
 $_COS_LANG_MODULE['module_system_git_module_deleted'] = 'Module deleted';
 
+// Translation of file /modules/module_system_git/user/add.php
+
+$_COS_LANG_MODULE['module_system_git_module_created'] = 'Module has been created. Your module will be ativated when it has been verfied - you will recieve an email';
+
 // Translation of file /modules/module_system_git/user/edit.php
 
 $_COS_LANG_MODULE['module_system_git_module_updated'] = 'Module updated';
 
-// Translation of file /modules/module_system_git/user/add.php
+// Translation of file /modules/module_system_git/view.module_system_git.inc
 
-$_COS_LANG_MODULE['module_system_git_module_created'] = 'Module has been created. Your module will be ativated when it has been verfied - you will recieve an email';
+$_COS_LANG_MODULE['Show All'] = 'Show All';
+$_COS_LANG_MODULE['Search'] = 'Search';
+$_COS_LANG_MODULE['module_system_git_read_more'] = '(More info)';
+$_COS_LANG_MODULE['module_system_git_install'] = 'Install';
+$_COS_LANG_MODULE['module_system_git_edit'] = 'Edit';
+$_COS_LANG_MODULE['module_system_git_delete'] = 'Delete';
+$_COS_LANG_MODULE['module_system_git_hide'] = 'Hide';
+$_COS_LANG_MODULE['module_system_git_show'] = 'Show';
+$_COS_LANG_MODULE['module_system_git_visit_website'] = 'Website';
 
 // Translation of file /modules/module_system_git/model.module_system_git.inc
 
@@ -33,15 +45,3 @@ $_COS_LANG_MODULE['module_system_git_error_clone_url_exists'] = 'Clone url alrea
 $_COS_LANG_MODULE['module_system_git_error_clone_url_no_tag'] = 'Your module need at least one tag';
 $_COS_LANG_MODULE['module_system_git_error_clone_url_tag_not_float'] = 'Your module needs to use floats as version tags';
 $_COS_LANG_MODULE['module_system_moved_permanently'] = 'Module moved';
-
-// Translation of file /modules/module_system_git/view.module_system_git.inc
-
-$_COS_LANG_MODULE['Show All'] = 'Show All';
-$_COS_LANG_MODULE['Search'] = 'Search';
-$_COS_LANG_MODULE['module_system_git_read_more'] = '(More info)';
-$_COS_LANG_MODULE['module_system_git_install'] = 'Install';
-$_COS_LANG_MODULE['module_system_git_edit'] = 'Edit';
-$_COS_LANG_MODULE['module_system_git_delete'] = 'Delete';
-$_COS_LANG_MODULE['module_system_git_hide'] = 'Hide';
-$_COS_LANG_MODULE['module_system_git_show'] = 'Show';
-$_COS_LANG_MODULE['module_system_git_visit_website'] = 'Website';

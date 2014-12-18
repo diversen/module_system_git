@@ -1,6 +1,6 @@
 <?php
 
-
+use diversen\valid as cosValidate; 
 
 
 moduleloader::includeTemplateCommon('jquery-markedit');

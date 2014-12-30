@@ -2,7 +2,7 @@
 
 use diversen\valid as cosValidate; 
 
-
+include_once _COS_PATH . "/modules/module_system_git/views.php";
 moduleloader::includeTemplateCommon('jquery-markedit');
 jquery_markedit_load_assets();
 

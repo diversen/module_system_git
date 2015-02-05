@@ -1,6 +1,6 @@
 <?php
 
-moduleloader::includeModel('module_system_git');
+moduleloader::includeModule('module_system_git');
 
 if (!moduleSystemGit::checkModuleOwner()){
     if ( !session::isAdmin()){

@@ -1,9 +1,5 @@
 <?php
 
-$_COS_LANG_MODULE['module_system_git_delete_module'] = 'Delete_Module';
-$_COS_LANG_MODULE['module_system_git_module_deleted'] = 'Modul Utgår';
-$_COS_LANG_MODULE['module_system_git_module_created'] = 'Modulen har skapats. Din modulen kommer att ativated när det har verfied - du kommer att få ett e-postmeddelande';
-$_COS_LANG_MODULE['module_system_git_module_updated'] = 'Modul Uppdaterat';
 $_COS_LANG_MODULE['Show All'] = 'Visa alla';
 $_COS_LANG_MODULE['Search'] = 'Sök';
 $_COS_LANG_MODULE['module_system_git_read_more'] = '(Mer info)';
@@ -13,6 +9,10 @@ $_COS_LANG_MODULE['module_system_git_delete'] = 'Radera';
 $_COS_LANG_MODULE['module_system_git_hide'] = 'Dölj';
 $_COS_LANG_MODULE['module_system_git_show'] = 'Visa';
 $_COS_LANG_MODULE['module_system_git_visit_website'] = 'Hemsida';
+$_COS_LANG_MODULE['module_system_git_delete_module'] = 'Delete_Module';
+$_COS_LANG_MODULE['module_system_git_module_deleted'] = 'Modul Utgår';
+$_COS_LANG_MODULE['module_system_git_module_created'] = 'Modulen har skapats. Din modulen kommer att ativated när det har verfied - du kommer att få ett e-postmeddelande';
+$_COS_LANG_MODULE['module_system_git_module_updated'] = 'Modul Uppdaterat';
 $_COS_LANG_MODULE['Delete Module'] = 'Radera Modul';
 $_COS_LANG_MODULE['Edit Module'] = 'Redigera Modul';
 $_COS_LANG_MODULE['Add Module'] = 'Lägg Modul';

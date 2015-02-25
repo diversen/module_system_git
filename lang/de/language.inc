@@ -1,9 +1,5 @@
 <?php
 
-$_COS_LANG_MODULE['module_system_git_delete_module'] = 'Modul löschen';
-$_COS_LANG_MODULE['module_system_git_module_deleted'] = 'Modul gelöscht';
-$_COS_LANG_MODULE['module_system_git_module_created'] = 'Modul erstellt wurde. Ihre Baugruppe ativated wenn es verfied worden ist - Sie erhalten eine E-Mail erhalten';
-$_COS_LANG_MODULE['module_system_git_module_updated'] = 'Module aktualisiert';
 $_COS_LANG_MODULE['Show All'] = 'Alle anzeigen';
 $_COS_LANG_MODULE['Search'] = 'Suche';
 $_COS_LANG_MODULE['module_system_git_read_more'] = '(Weitere Informationen)';
@@ -13,6 +9,10 @@ $_COS_LANG_MODULE['module_system_git_delete'] = 'Löschen';
 $_COS_LANG_MODULE['module_system_git_hide'] = 'Verbergen';
 $_COS_LANG_MODULE['module_system_git_show'] = 'Zeigen';
 $_COS_LANG_MODULE['module_system_git_visit_website'] = 'Webseite';
+$_COS_LANG_MODULE['module_system_git_delete_module'] = 'Modul löschen';
+$_COS_LANG_MODULE['module_system_git_module_deleted'] = 'Modul gelöscht';
+$_COS_LANG_MODULE['module_system_git_module_created'] = 'Modul erstellt wurde. Ihre Baugruppe ativated wenn es verfied worden ist - Sie erhalten eine E-Mail erhalten';
+$_COS_LANG_MODULE['module_system_git_module_updated'] = 'Module aktualisiert';
 $_COS_LANG_MODULE['Delete Module'] = 'Modul löschen';
 $_COS_LANG_MODULE['Edit Module'] = 'Modul bearbeiten';
 $_COS_LANG_MODULE['Add Module'] = 'Modul hinzufügen';

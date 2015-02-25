@@ -1,9 +1,5 @@
 <?php
 
-$_COS_LANG_MODULE['module_system_git_delete_module'] = 'Poista moduuli';
-$_COS_LANG_MODULE['module_system_git_module_deleted'] = 'Moduuli poistettu';
-$_COS_LANG_MODULE['module_system_git_module_created'] = 'Moduuli on luotu. Sinun moduuli ativated kun se on verfied - voit vastaanottaa sähköpostia';
-$_COS_LANG_MODULE['module_system_git_module_updated'] = 'Moduuli päivitetty';
 $_COS_LANG_MODULE['Show All'] = 'Näytä kaikki';
 $_COS_LANG_MODULE['Search'] = 'Haku';
 $_COS_LANG_MODULE['module_system_git_read_more'] = '(Lisätietoja)';
@@ -13,6 +9,10 @@ $_COS_LANG_MODULE['module_system_git_delete'] = 'Poistaa';
 $_COS_LANG_MODULE['module_system_git_hide'] = 'Piilottaa';
 $_COS_LANG_MODULE['module_system_git_show'] = 'Show';
 $_COS_LANG_MODULE['module_system_git_visit_website'] = 'Verkkosivusto';
+$_COS_LANG_MODULE['module_system_git_delete_module'] = 'Poista moduuli';
+$_COS_LANG_MODULE['module_system_git_module_deleted'] = 'Moduuli poistettu';
+$_COS_LANG_MODULE['module_system_git_module_created'] = 'Moduuli on luotu. Sinun moduuli ativated kun se on verfied - voit vastaanottaa sähköpostia';
+$_COS_LANG_MODULE['module_system_git_module_updated'] = 'Moduuli päivitetty';
 $_COS_LANG_MODULE['Delete Module'] = 'Poista moduuli';
 $_COS_LANG_MODULE['Edit Module'] = 'Edit Module';
 $_COS_LANG_MODULE['Add Module'] = 'Lisää Module';

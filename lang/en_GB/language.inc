@@ -1,6 +1,18 @@
 <?php
 
 
+// Translation of file /modules/module_system_git/views.php
+
+$_COS_LANG_MODULE['Show All'] = 'Show All';
+$_COS_LANG_MODULE['Search'] = 'Search';
+$_COS_LANG_MODULE['module_system_git_read_more'] = '(More info)';
+$_COS_LANG_MODULE['module_system_git_install'] = 'Install';
+$_COS_LANG_MODULE['module_system_git_edit'] = 'Edit';
+$_COS_LANG_MODULE['module_system_git_delete'] = 'Delete';
+$_COS_LANG_MODULE['module_system_git_hide'] = 'Hide';
+$_COS_LANG_MODULE['module_system_git_show'] = 'Show';
+$_COS_LANG_MODULE['module_system_git_visit_website'] = 'Website';
+
 // Translation of file /modules/module_system_git/user/delete.php
 
 $_COS_LANG_MODULE['module_system_git_delete_module'] = 'Delete module';
@@ -14,19 +26,7 @@ $_COS_LANG_MODULE['module_system_git_module_created'] = 'Module has been created
 
 $_COS_LANG_MODULE['module_system_git_module_updated'] = 'Module updated';
 
-// Translation of file /modules/module_system_git/view.module_system_git.inc
-
-$_COS_LANG_MODULE['Show All'] = 'Show All';
-$_COS_LANG_MODULE['Search'] = 'Search';
-$_COS_LANG_MODULE['module_system_git_read_more'] = '(More info)';
-$_COS_LANG_MODULE['module_system_git_install'] = 'Install';
-$_COS_LANG_MODULE['module_system_git_edit'] = 'Edit';
-$_COS_LANG_MODULE['module_system_git_delete'] = 'Delete';
-$_COS_LANG_MODULE['module_system_git_hide'] = 'Hide';
-$_COS_LANG_MODULE['module_system_git_show'] = 'Show';
-$_COS_LANG_MODULE['module_system_git_visit_website'] = 'Website';
-
-// Translation of file /modules/module_system_git/model.module_system_git.inc
+// Translation of file /modules/module_system_git/module.php
 
 $_COS_LANG_MODULE['Delete Module'] = 'Delete Module';
 $_COS_LANG_MODULE['Edit Module'] = 'Edit Module';

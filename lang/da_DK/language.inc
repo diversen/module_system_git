@@ -1,9 +1,5 @@
 <?php
 
-$_COS_LANG_MODULE['module_system_git_delete_module'] = 'Delete_Module';
-$_COS_LANG_MODULE['module_system_git_module_deleted'] = 'Modul Slettet';
-$_COS_LANG_MODULE['module_system_git_module_created'] = 'Modulet er blevet oprettet. Dit modul vil blive ativated når det er blevet verificeret - vil du modtage en e-mail';
-$_COS_LANG_MODULE['module_system_git_module_updated'] = 'Modul Opdateret';
 $_COS_LANG_MODULE['Show All'] = 'Vis alle';
 $_COS_LANG_MODULE['Search'] = 'Søg';
 $_COS_LANG_MODULE['module_system_git_read_more'] = '(Mere info)';
@@ -13,6 +9,10 @@ $_COS_LANG_MODULE['module_system_git_delete'] = 'Slet';
 $_COS_LANG_MODULE['module_system_git_hide'] = 'Skjul';
 $_COS_LANG_MODULE['module_system_git_show'] = 'Vis';
 $_COS_LANG_MODULE['module_system_git_visit_website'] = 'Websted';
+$_COS_LANG_MODULE['module_system_git_delete_module'] = 'Delete_Module';
+$_COS_LANG_MODULE['module_system_git_module_deleted'] = 'Modul Slettet';
+$_COS_LANG_MODULE['module_system_git_module_created'] = 'Modulet er blevet oprettet. Dit modul vil blive ativated når det er blevet verificeret - vil du modtage en e-mail';
+$_COS_LANG_MODULE['module_system_git_module_updated'] = 'Modul Opdateret';
 $_COS_LANG_MODULE['Delete Module'] = 'Slet Module';
 $_COS_LANG_MODULE['Edit Module'] = 'Rediger Module';
 $_COS_LANG_MODULE['Add Module'] = 'Tilføj Module';

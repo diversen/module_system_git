@@ -1,9 +1,5 @@
 <?php
 
-$_COS_LANG_MODULE['module_system_git_delete_module'] = '删除模块';
-$_COS_LANG_MODULE['module_system_git_module_deleted'] = '模块中删除';
-$_COS_LANG_MODULE['module_system_git_module_created'] = '模块已创建。当它已经verfied你的模块将被ativated  - 你会收到一封电子邮件';
-$_COS_LANG_MODULE['module_system_git_module_updated'] = '模块更新';
 $_COS_LANG_MODULE['Show All'] = '显示全部';
 $_COS_LANG_MODULE['Search'] = '搜索';
 $_COS_LANG_MODULE['module_system_git_read_more'] = '（更多信息）';
@@ -13,6 +9,10 @@ $_COS_LANG_MODULE['module_system_git_delete'] = '删除';
 $_COS_LANG_MODULE['module_system_git_hide'] = '隐藏';
 $_COS_LANG_MODULE['module_system_git_show'] = '节目';
 $_COS_LANG_MODULE['module_system_git_visit_website'] = '网站';
+$_COS_LANG_MODULE['module_system_git_delete_module'] = '删除模块';
+$_COS_LANG_MODULE['module_system_git_module_deleted'] = '模块中删除';
+$_COS_LANG_MODULE['module_system_git_module_created'] = '模块已创建。当它已经verfied你的模块将被ativated  - 你会收到一封电子邮件';
+$_COS_LANG_MODULE['module_system_git_module_updated'] = '模块更新';
 $_COS_LANG_MODULE['Delete Module'] = '删除模块';
 $_COS_LANG_MODULE['Edit Module'] = '编辑模块';
 $_COS_LANG_MODULE['Add Module'] = '添加模块';
